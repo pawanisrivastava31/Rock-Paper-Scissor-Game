@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    color: #667eea;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Section */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.player-stat {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.draw-stat {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.computer-stat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Game Arena */
+.game-arena {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0;
+    min-height: 200px;
+}
+
+.player-section,
+.computer-section {
+    text-align: center;
+}
+
+.vs-section {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.hand-container {
+    margin-top: 20px;
+    color: #667eea;
+}
+
+.hand-container i {
+    transition: transform 0.3s ease;
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out 3;
+}
+
+.player-section .hand-container {
+    transform-origin: center;
+}
+
+.computer-section .hand-container {
+    transform-origin: center;
+    transform: scaleX(-1);
+}
+
+/* Result Message */
+.result-message {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    min-height: 40px;
+    color: #667eea;
+}
+
+.result-message.win {
+    color: #00f2fe;
+}
+
+.result-message.lose {
+    color: #f5576c;
+}
+
+.result-message.draw {
+    color: #38f9d7;
+}
+
+/* Choice Buttons */
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.choice-btn {
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #667eea;
+    min-width: 120px;
+}
+
+.choice-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    background: #667eea;
+    color: white;
+}
+
+.choice-btn:active {
+    transform: translateY(-2px);
+}
+
+.choice-btn i {
+    margin-bottom: 10px;
+}
+
+.choice-btn p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.choice-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Reset Button */
+.reset-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .game-arena {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .vs-section {
+        order: 2;
+    }
+
+    .choices {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .choice-btn {
+        width: 100%;
+    }
+}
+/* Total Games Display */
+.total-games {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.total-games h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.total-games span {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #ffd700;
+}

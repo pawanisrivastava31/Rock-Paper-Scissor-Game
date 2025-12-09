@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Rock Paper Scissors</h1>
+        
+        <!-- Total Games Display -->
+        <div class="total-games">
+            <h2>Total Games Played: <span id="totalGames">0</span></h2>
+        </div>
+        
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stat-box player-stat">
+                <h3>Player</h3>
+                <div class="stat-number" id="playerWins">0</div>
+                <p>Wins</p>
+            </div>
+            <div class="stat-box draw-stat">
+                <h3>Draws</h3>
+                <div class="stat-number" id="draws">0</div>
+                <p>Games</p>
+            </div>
+            <div class="stat-box computer-stat">
+                <h3>Computer</h3>
+                <div class="stat-number" id="computerWins">0</div>
+                <p>Wins</p>
+            </div>
+        </div>
+
+        <!-- Game Arena -->
+        <div class="game-arena">
+            <div class="player-section">
+                <h2>You</h2>
+                <div class="hand-container" id="playerHand">
+                    <i class="fas fa-hand-rock fa-5x"></i>
+                </div>
+            </div>
+
+            <div class="vs-section">
+                <h2>VS</h2>
+            </div>
+
+            <div class="computer-section">
+                <h2>Computer</h2>
+                <div class="hand-container" id="computerHand">
+                    <i class="fas fa-hand-rock fa-5x"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Message -->
+        <div class="result-message" id="resultMessage"></div>
+
+        <!-- Choice Buttons -->
+        <div class="choices">
+            <button class="choice-btn" data-choice="rock">
+                <i class="fas fa-hand-rock fa-3x"></i>
+                <p>Rock</p>
+            </button>
+            <button class="choice-btn" data-choice="paper">
+                <i class="fas fa-hand-paper fa-3x"></i>
+                <p>Paper</p>
+            </button>
+            <button class="choice-btn" data-choice="scissors">
+                <i class="fas fa-hand-scissors fa-3x"></i>
+                <p>Scissors</p>
+            </button>
+        </div>
+
+        <!-- Reset Button -->
+        <button class="reset-btn" id="resetBtn">Reset Stats</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
